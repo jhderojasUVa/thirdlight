@@ -1,0 +1,15 @@
+{
+  "name": "foldertree",
+  "version": "1.0.0",
+  "description": "A demo backend for serving a tree like structure.",
+  "main": "server/index.js",
+  "scripts": {
+    "hello_world": "node server/index.js --port 8080 --path solution/hello_world"
+  },
+  "author": "James Wilson",
+  "license": "MIT",
+  "dependencies": {
+    "args": "2.6.x",
+    "express": "^4.16.4"
+  }
+}

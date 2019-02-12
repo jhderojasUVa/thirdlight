@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="hello_world">
+  <head>
+    <meta charset="utf-8">
+    <title>Third Light challenge - solutions help</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Extra styles CSS -->
+    <link rel="stylesheet" href="./css/hello_world.css">
+  </head>
+  <body>
+    <!-- header -->
+    <div class="container-full header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 text-left">
+            <h1>Third<span class="red">Light</span> <small>File Explorer</small></h1>
+          </div>
+          <div class="col-md-2 text-right align-middle">
+            <a class="icon" href="index.html" target="_self" role="link" title="Need help?"><i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container m-up-20 m-down-20">
+      <div class="row">
+        <div class="col-md-11 offset-md-1">
+          <h1>Help</h1>
+          <p>This app it's very easy to work with.</p>
+          <p>The app is divided in three parts:</p>
+            <ol>
+              <li><strong>Breadcrumb</strong>: That tells you where are you and you can navigate by clicking where you want to go.</li>
+              <li><strong>Search input</strong>: Where you can filters the results on the directory you are viewing.</li>
+              <li><strong>Content</strong>: Where you see the content of the directory or the file you selected.</li>
+            </ol>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <h2>Breadcrumb</h2>
+          <p>The breadcrumb will tell you the directory you are seen on the <strong>content</strong> area.</p>
+          <p>You can move between directories (going back in the tree) using the breadcrumb by clicking on the name of the folder that you want to go.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="./img/breadcrumb.PNG" alt="Example image of the breadcrumb" class="img-fluid">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <h2>Search input</h2>
+          <p>Maybe, a folder that you are seen will have too much content on it.</p>
+          <p>In order to help you find an element inside the folder you can type the name or letters contained on the item that you want to search.</p>
+          <p>The <strong>search input</strong> will filter results on real time.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="./img/searchbar.PNG" alt="The search bar where you can filter the results" class="img-fluid">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-11 offset-md-1">
+          <h2>Content area</h2>
+          <p>The content area will show you files and folders that are inside the folder you are viewing in a table.</p>
+          <p>Different and well know icons will identify if it's a folder or a file.</p>
+          <p>You can see the content area in two ways. See the folders or see the detail of the file and the folder too.</p>
+          <p>It means, when you click on a file, the details will apear at right with a button where you can download (<em>this doesn't work because the JSON file doesn't give you a link, but you can make an idea about how it can be</em>).</p>
+          <p>If you click on a directory/folder you will go inside them.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="./img/contentfull.PNG" alt="The content on full size" class="img-fluid"><br/>
+          <h5 class="text-right">Content in full size</h5>
+        </div>
+        <div class="col-md-6">
+          <img src="./img/contentfilename.PNG" alt="The content when seen a filename" class="img-fluid"><br/>
+          <h5 class="text-right">Content when seen a filename</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-11 offset-md-1">
+          <h2>UX/UI</h2>
+          <p>The best way to know the UX on this app it's to see the "paper image prototypes". Do you want to see <a href="./img/ux.jpg" title="A photo of the prototype" class="link" target="_blank" role="link">the prototype of the application</a>?.</p>
+          <p>On the UI I have choosen as a base Bootstrap HTML framework to help and be more fast on the layout of the application but I have change the colors to a green and black and white style.</p>
+          <p>Black and white are the most easy election because I don't know the color palete that will be the best. Because, should I choose the business colors or make by my own?.</p>
+          <p>So my first idea it's to use the color that match the Logo of ThirdLight (as can see on the header) and then a black and white palete, but with that election can be "old", so to have a point of color I choose a dark green because green it's the color of nature, energy and safety. Using a folder application must be "safety" for the user.</p>
+          <p>Icons in black and white and a white background for the content will focus the user on the data, so that's why I choose not to put colors except a brief green when you see the item content, to help the user be more confortable.</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid footer">
+        <div class="row">
+          <div class="col-md-10">
+            <h1>By Jesús Ángel Hernández de Rojas<h1>
+            <p><a href="mailto:jhderojas@gmail.com?subject=Questions about the coding test" title="Send me an email if you have questions" role="link"><i class="far fa-envelope"></i> jhderojas@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

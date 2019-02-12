@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="hello_world">
+  <head>
+    <meta charset="utf-8">
+    <title>Third Light challenge - solution</title>
+    <!-- JS -->
+    <script src="./js/angularjs.js"></script>
+    <script src="./js/angular-route.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Extra styles CSS -->
+    <link rel="stylesheet" href="./css/hello_world.css">
+  </head>
+  <body>
+    <!-- header -->
+    <div class="container-full header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 text-left">
+            <h1>Third<span class="red">Light</span> <small>File Explorer</small></h1>
+          </div>
+          <div class="col-md-2 text-right align-middle">
+            <a class="icon" href="help.html" target="_self" role="link" title="Need help?"><i class="far fa-question-circle"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container m-up-20 m-down-20" ng-controller="showcontent">
+      <div class="row">
+        <div class="col-md-12">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" ng-repeat="bread in breadcrumb">
+              <a href="" ng-if="!$last" title="Go to {{bread.item.name}}" ng-click="goToBreadcrumb(bread.order, bread.item.id, bread.item.parentId, true)">{{bread.item.name}}</a>
+              <a ng-if="$last" title="You are here!">{{bread.item.name}}</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="row">
+        <!-- search bar -->
+        <div class="col-md-12 m-down-20">
+          <input type="text" title="Filter elements by name" class="w-100 search" ng-model="searchText" placeholder="Filter on current directory...">
+        </div>
+        <!-- file explorer -->
+        <div ng-class="fileShow ? 'col-md-6' : 'col-md-12'">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" width="10"></th>
+                <th scope="col">Filename</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="file in files | orderBy: file.name | filter: {name: searchText}">
+                <td>
+                  <span ng-if="file.type == 'FILE'"><i class="far fa-file"></i></span>
+                  <span ng-if="file.type == 'FOLDER'"><i class="far fa-folder"></i></span>
+                </td>
+                <td ng-if="file.order && file.back">
+                  <a title="Go to parent directory" ng-click="goToBreadcrumb(file.order, file.id, file.parentId, file.back)">{{file.name}}</a>
+                </td>
+                <td ng-if="!file.order">
+                  <a href="#" title="Open or go to {{file.name}}" ng-click="getContent(file.id, file.parentId, file.type, file.back)">{{file.name}}</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- file details -->
+        <div class="filespecs col-md-6 border-left" ng-show="fileShow">
+          <h1><span class="headerfile">File details</span></h1>
+          <p><span class="strong">Name</span>: {{filename.name}}</p>
+          <p><span class="strong">Type</span>:
+            <span ng-if="filename.fileType == 'PNG' || filename.fileType == 'JPG'">Image, format {{filename.fileType}}</span>
+            <span ng-if="filename.fileType == 'PDF'">Adobe PDF</span>
+            <span ng-if="filename.fileType == 'DOC'">Microsft Word Document</span>
+            <span ng-if="filename.fileType == 'TXT'">Raw text file</span>
+            <span ng-if="filename.fileType == 'ZIP'">ZIP compressed file</span>
+            <span ng-if="filename.fileType == 'GZ'">Gzip compressed file</span>
+            <span ng-if="filename.fileType == 'WAV'">Audio Waveformat</span>
+            <span ng-if="filename.fileType == 'DMG'">Macintosh Disk Image File</span>
+            <span ng-if="filename.fileType == 'MP4'">Mpeg 4 (Video/Audio)</span>
+            <span ng-if="filename.fileType == 'MOV'">Apple Quicktime Movie</span>
+            <span ng-if="filename.fileType == 'NEF'">Nikon Electronic Format</span>
+            <span ng-if="filename.fileType == 'OTF'">OpenType Font</span>
+            <span ng-if="filename.fileType == 'WOFF2'">Web Open Font Format version 2</span>
+            <span ng-if="filename.fileType == 'INI'">Configuration file</span>
+            <span ng-if="filename.fileType == 'GO'">Go Language</span>
+            <span ng-if="filename.fileType == 'CRT'">Public Certificate file</span>
+          </p>
+          <p><span class="strong">Description</span>: There's no description on the JSON file, sorry</p>
+          <p><span class="strong">Tags</span>: There's no tags on the JSON file, sorry</p>
+          <button type="button" class="btn btn-block btn-outline-dark btn-lg"><i class="fas fa-file-download"></i> download file <small>(No it doesn't work)</small></button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid footer">
+        <div class="row">
+          <div class="col-md-10">
+            <h1>By Jesús Ángel Hernández de Rojas<h1>
+            <p><a href="mailto:jhderojas@gmail.com?subject=Questions about the coding test" title="Send me an email if you have questions" role="link"><i class="far fa-envelope"></i> jhderojas@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Definition of the app
+      var thirdLight = angular.module('hello_world', []);
+    </script>
+    <!-- Service -->
+    <script src="./js/service/factory.js"></script>
+    <!-- Controllers -->
+    <script src="./js/components/showcontent.controller.js"></script>
+  </body>
+</html>

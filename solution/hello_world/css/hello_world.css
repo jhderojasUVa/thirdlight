@@ -1,0 +1,167 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat:400,700|Open+Sans:300,400');
+
+/* Generic */
+.m-up-20 {
+  margin-top: 2em;
+}
+
+.m-down-20 {
+  margin-bottom: 2em;
+}
+
+/* Header */
+.header {
+  padding: 0.2em;
+  background-color: #003840;
+}
+
+.header h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: white;
+  font-size: 3em;
+  margin-left: 1em;
+  stroke: #999;
+  stroke-width: 1;
+}
+
+.header h1 .red {
+  color: #dc3e3e;
+}
+
+.header h1 small {
+  font-size: 0.5em;
+}
+
+.header .icon {
+  position: relative;
+  top: 0.2em;
+  margin-right: 1em;
+}
+
+.header a.icon {
+  font-size: 2em;
+  color: white;
+  padding: 0.1em 0.3em;
+}
+
+.header a.icon:hover {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-family: 'Lato', sans-serif;
+  border-radius: 0px;
+  border-bottom: 1px solid #d2d2d2;
+  background-color: #f2f2f2;
+}
+
+.breadcrumb a {
+  transition: all 0.2s;
+  color: black;
+}
+
+.breadcrumb a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid black;
+}
+
+/* Search */
+.search {
+  padding: 0.5em 1em;
+}
+
+/* Folders */
+.table {
+  font-family: 'Montserrat', sans-sans-serif;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.table tr:hover {
+  background-color: #e2e2e2;
+}
+
+.table thead tr {
+  background-color: white;
+}
+
+.table thead tr:hover {
+  background-color: white;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* File description */
+.boder-left {
+  border-left: 1px dotted #121212;
+}
+
+.filespecs h1 {
+  font-size: 1.9em;
+  margin-bottom: 0.5em;
+  padding-bottom: 2px;
+  border-bottom: 1px dotted black;
+}
+
+.filespecs h1 .headerfile {
+  background-color: white;
+  border-bottom: 1px dotted #005a5b;
+}
+
+.filespecs p .strong {
+  color: #999;
+  font-weight: bold;
+}
+
+.filespecs button small {
+  font-size: 0.5em;
+}
+
+/* help */
+h5 {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7em;
+}
+
+.link {
+  border-bottom: 1px dotted black;
+  transition: all 0.2;
+}
+
+.link:hover {
+  border-bottom: 2px solid black;
+}
+
+/* Footer */
+footer .footer {
+  margin-top: 1em;
+  padding-top: 0.5em;
+  background-color: black;
+  color: white;
+}
+
+footer .footer h1 {
+  display: inline-block;
+  font-size: 1.2em;
+}
+
+footer .footer p,  footer .footer a {
+  font-size: 0.8em;
+  margin-left: 1em;
+  color: #a5a5a5;
+}
